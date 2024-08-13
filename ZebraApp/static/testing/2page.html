@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Service Details</title>
+</head>
+<body>
+<style>
+    /* Add your CSS styling here */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+.caption-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.link-box {
+    margin-top: auto;
+}
+
+.sidebar-widget {
+    margin-top: 20px;
+}
+
+.sidebar-blog-category {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.blog-categories {
+    list-style: none;
+    padding: 0;
+}
+
+.blog-categories li {
+    margin: 5px 0;
+}
+
+.nested-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+</style>
+<div class="card-container">
+    <div class="card">
+        <div class="caption-box">
+            <h3><a href="">ACP Cladding</a></h3>
+            <div class="link-box"><a href="service-detail.html?service=acp-cladding" class="read-more">Read More <i class="fa fa-angle-double-right"></i></a></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="caption-box">
+            <h3><a href="">Architectural Signage</a></h3>
+            <div class="link-box"><a href="service-detail.html?service=architectural-signage" class="read-more">Read More <i class="fa fa-angle-double-right"></i></a></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="caption-box">
+            <h3><a href="">Unipole Signage</a></h3>
+            <div class="link-box"><a href="service-detail.html?service=unipole-signage" class="read-more">Read More <i class="fa fa-angle-double-right"></i></a></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="caption-box">
+            <h3><a href="">Signage Letters</a></h3>
+            <div class="link-box"><a href="service-detail.html?service=signage-letters" class="read-more">Read More <i class="fa fa-angle-double-right"></i></a></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="sidebar-widget sidebar-blog-category">
+    <ul class="blog-categories">
+        <li class="active1" id="category-acp"><a href="#ACP" onclick="smoothScroll(event, 'ACP')">ACP Cladding</a></li>
+        <li id="category-signages" class="category-open">
+            <a href="#Signages" id="active2" onclick="toggleNestedMenu(event, 'Signages')">Signages <span class="arrow">&#9658;</span></a>
+            <ul class="nested-menu">
+                <li data-service="architectural-signage" id="active3"><a href="#">Architectural Signage</a></li>
+                <li data-service="pylon-signage" id="active4"><a href="#">Pylon Signage</a></li>
+                <li data-service="unipole-signage" id="active4"><a href="#">Unipole Signage</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    // Smooth scrolling function
+function smoothScroll(event, targetId) {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Toggle nested menu function
+function toggleNestedMenu(event, parentCategory) {
+    event.preventDefault();
+    const nestedMenu = document.querySelector(`#category-${parentCategory.toLowerCase()} .nested-menu`);
+    const arrow = document.querySelector(`#category-${parentCategory.toLowerCase()} .arrow`);
+
+    if (nestedMenu.style.display === 'block') {
+        nestedMenu.style.display = 'none';
+        arrow.innerHTML = '&#9658;'; // Right arrow
+    } else {
+        nestedMenu.style.display = 'block';
+        arrow.innerHTML = '&#9660;'; // Down arrow
+    }
+}
+
+// Add event listeners to nested menu items
+document.querySelectorAll('.nested-menu li').forEach(item => {
+    item.addEventListener('click', event => {
+        const service = event.currentTarget.getAttribute('data-service');
+        window.location.href = `service-detail.html?service=${service}`;
+    });
+});
+
+</script>
+</body>
+</html>
+
+

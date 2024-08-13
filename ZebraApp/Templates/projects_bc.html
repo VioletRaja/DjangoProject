@@ -1,0 +1,575 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- projects27:09-->
+<head>
+<meta charset="utf-8">
+<title>Zebra Sign World | Projects</title>
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">   
+<!--Color Switcher Mockup-->
+<link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+<!--Color Themes-->
+<link id="theme-color-file" href="{% static 'css/color-themes/default-theme.css' %}" rel="stylesheet">
+
+<!-- <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
+<link rel="icon" href="{% static 'images/LOGO.png' %}" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <!-- <div class="preloader"></div> -->
+    
+        <!-- Main Header-->
+    <header class="main-header header-style-four">
+        <div class="header-top">
+            <div class="auto-container clearfix">
+                <div class="top-right">
+                    <ul class="contact-info">
+                        <li><span>PHONE :</span>&nbsp;<a href="+91 98430 99624"> +91 98430 99624 | +91 88071 99880</a></li>
+                        <li><span>EMAIL :</span>&nbsp; <a href="https://mail.google.com/mail">zebrasignworld@gmail.com</a></li>
+                        <li><span class="location-fa"><a href="https://www.google.com/maps/place/Zebra+Sign+World/@10.9941215,76.9987168,47m/data=!3m1!1e3!4m6!3m5!1s0x3ba8596365c05095:0x32f5b0fc7e365c9!8m2!3d10.9941751!4d76.9987868!16s%2Fg%2F11v5z9x909?authuser=0&entry=ttu">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i></a></span>&nbsp; </li>
+                    </ul>  
+                </div>
+            </div>
+        </div>
+
+        <div class="header-lower">
+            <div class="auto-container">
+                <div class="main-box clearfix">
+                    <div class="logo-box">
+                        <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/main-slider/logo-white.png' %}" alt="logo-box" title=""></a></div>
+                    </div>
+
+                    <div class="nav-outer">
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md ">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->      
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon flaticon-menu-button"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix" style="padding-top: 2em;">
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'index' %}">About</a></li>
+                                    <li class="dropdown"><a href="{% url 'service' %}">Services</a>
+                                        <!-- <ul>
+                                            <li><a href="service-detail.html">Service Detail</a></li>
+                                        </ul> -->
+                                    </li>
+                                    <li class="current dropdown"><a href="{% url 'projects' %}">Projects</a>
+                                    </li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    <!-- <li class="dropdown has-mega-menu"><a href="#">Pages</a>
+                                        <div class="mega-menu">
+                                            <div class="mega-menu-bar row clearfix">
+                                                <div class="column col-lg-3 col-md-3 col-sm-12">
+                                                    <h3>About</h3>
+                                                    <ul>
+                                                        <li><a href="about.html">About Us</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-lg-3 col-md-3 col-sm-12">
+                                                    <h3>Services</h3>
+                                                    <ul>
+                                                        <li><a href="services.html">All Services</a></li>
+                                                        <li><a href="service-detail.html">Service Detail</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-lg-3 col-md-3 col-sm-12">
+                                                    <h3>Projects</h3>
+                                                    <ul>
+                                                        <li><a href="projects.html">Projects</a></li>
+
+                                                        <li><a href="contact.html">Contact</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="column col-lg-3 col-md-3 col-sm-12">
+                                                    <h3>Support</h3>
+                                                    <ul>
+                                                        <li><a href="blog.html">24/7 Customer's Support</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                </ul> 
+                            </div>
+                        </nav><!-- Main Menu End-->                        
+
+                        <!-- Outer Box-->
+                        <!-- <div class="outer-box">
+                            <div class="search-box-outer">
+                                <div class="dropdown" style="margin-top: 2em;">
+                                    <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                    <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                        <li class="panel-outer">
+                                            <div class="form-container">
+                                                <form method="post" action="#">
+                                                    <div class="form-group">
+                                                        <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                        <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Main Header -->
+    
+    <!--Page Title-->
+    <section class="page-title" id="page-project">
+        <video autoplay muted loop class="video-background">
+            <source src="{{ PH1.0.Project_Header.url }}" type="video/mp4">
+        </video>
+        <div class="auto-container">
+            <div class="inner-container clearfix">
+                <div class="title-box">
+                    <h1>Projects</h1>
+                    <span class="title">The Exterior speak for themselves</span>
+                </div>
+                <!-- <ul class="bread-crumb clearfix">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Projects</li>
+                </ul> -->
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <section class="projects-section alternate">
+        <div class="auto-container">
+            <div class="mixitup-gallery">
+                                    
+            </div>
+        </div>
+    
+            <div class="styled-pagination">
+                <ul class="clearfix">
+                    <li class="prev-post"><a href="#"><span class="fa fa-long-arrow-left"></span> Prev</a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li class="next-post"><a href="#"> Next <span class="fa fa-long-arrow-right"></span> </a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <div id="carousel-controls">
+        <button id="prev-arrow">←</button>
+        <button id="next-arrow">→</button>
+    </div> -->
+    
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+        <div id="sidebar-content">
+            <!-- Carousel -->
+            <div class="carousel">
+                <img class="carousel-image" src="{% static 'images/gallery/2-1.jpg' %}" alt="logo">
+                <img class="carousel-image" src="{% static 'images/gallery/2-2.jpg' %}" alt="logo">
+                <img class="carousel-image" src="{% static 'images/gallery/2-3.jpg' %}" alt="logo">
+            </div>
+            <h1 id="project-title" style="font-size: 22px;">Project Title</h1>
+            <p id="project-description">Project description goes here.</p>
+        </div>
+    </div>
+<!-- --------------------------------------------------Back up code for scripts  -->
+    <div class="card-container">
+        {% for item in PAC %}
+        <div class="card" onclick="showFullImage({{ forloop.counter0 }},'set1')">
+            <img src="{{ item.image.url }}" alt="Image {{ forloop.counter }}">
+        </div>
+        {% endfor %}
+        <!-- <div class="card" onclick="showFullImage(1, 'set2')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5wLsUFIt6-L77h9b-XAeobOdG6bSOx4nDXOQVFn9my32zpPmBVI-u3-eBLKvtc_J4lqI&usqp=CAU" alt="Image 2">
+        </div>
+        <div class="card" onclick="showFullImage(2, 'set3')">
+            <img src="https://www.tailorbrands.com/wp-content/uploads/2021/06/Header-Lego-logo.jpeg.jpg" alt="Image 3">
+        </div> -->
+    </div>
+    <div id="fullImageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="fullImage">
+            <img src="{{ PSP.project_image1.url }}" alt="Can't Load sry">
+        </div>
+        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
+    
+<script type="application/json" id="imageSetsData">
+{
+    "set1": [
+        {% for item in PSP %}
+          [
+           "{{ item.project_image1.url }}",
+           "{{ item.project_image2.url }}",
+           "{{ item.project_image3.url }}"
+          ]{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]             
+
+}
+</script>
+
+<script>
+    var imageSets = JSON.parse(document.getElementById('imageSetsData').textContent);
+    var currentIndex = 0;
+    var currentSet = 'set1';
+    console.log(imageSets);
+     
+    function showFullImage(index,set) {
+        currentIndex = index;
+        currentSet = set;
+        var modal = document.getElementById("fullImageModal");
+        var fullImage = document.getElementById("fullImage");
+        modal.style. display = "block";
+        fullImage.src = imageSets[currentSet][currentIndex][0];  // Show the first image in the nested array
+    }
+    
+    function closeModal() {
+        var modal = document.getElementById("fullImageModal");
+        modal.style.display = "none";
+        
+
+    }
+    
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = imageSets[currentSet].length - 1;
+        } else if (currentIndex >= imageSets[currentSet].length ) {
+            currentIndex = 0;
+        }
+        var fullImage = document.getElementById("fullImage");
+        fullImage.src = imageSets[currentSet][currentIndex][0];  // Show the first image in the nested array
+    }
+    
+</script>
+
+<!------------------------------------------------------------------------------------------------------------------------------ script 2 of looping JSON  -------------------------------------------------------------------->
+<div class="card-container">
+    {% for item in PAC %}
+    <div class="card" onclick="showFullImage('{{ item.catagory_id }}')">
+        <img src="{{ item.image.url }}" alt="Image {{ forloop.counter }}">
+    </div>
+    {% endfor %}
+    <!-- <div class="card" onclick="showFullImage(1, 'set2')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5wLsUFIt6-L77h9b-XAeobOdG6bSOx4nDXOQVFn9my32zpPmBVI-u3-eBLKvtc_J4lqI&usqp=CAU" alt="Image 2">
+    </div>
+    <div class="card" onclick="showFullImage(2, 'set3')">
+        <img src="https://www.tailorbrands.com/wp-content/uploads/2021/06/Header-Lego-logo.jpeg.jpg" alt="Image 3">
+    </div> -->
+</div>
+<div id="fullImageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="fullImage">
+    <a id="prev-arrow" class="prev">&#10094;</a>
+    <a id="next-arrow" class="next">&#10095;</a>
+    <!-- <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a> -->
+</div>
+<div>
+    {% for item in PSP  %}
+    <img src="{{ item.0.project_image1.url }}" alt="cant load">
+    <img src="{{ item.project_image2.url }}" alt="cant load">
+    <img src="{{ item.project_image3.url }}" alt="cant load">
+    {% endfor %}
+</div>
+<img src="{{ PSP.0.project_image1.url }}" alt="image not showing">
+
+<script type="application/json" id="imageSetsData">
+{
+{% for item in PSP %}
+"set{{ item.parent.catagory_id }}" : [
+    
+    {% if item.project_image1.url %}"{{ item.project_image1.url }}",{% endif %}
+    {% if item.project_image2.url %}"{{ item.project_image2.url }}",{% endif %}
+    {% if item.project_image3.url %}"{{ item.project_image3.url }}"{% endif %}
+
+]{% if not forloop.last %},{% endif %}
+{% endfor %}
+}
+</script>
+
+<script>
+var imageSets = JSON.parse(document.getElementById('imageSetsData').textContent);
+var currentIndex = 0;
+var currentSet = '';
+// console.log(imageSets);
+ 
+function showFullImage(set) {
+ 
+    currentSet = 'set' + set; 
+    if (imageSets[currentSet] && imageSets[currentSet].length > 0) {
+        currentIndex=0;
+       
+        var fullImage = document.getElementById("fullImage");
+        fullImage.src = imageSets[currentSet][currentIndex];
+        document.getElementById("fullImageModal").style.display = "block";
+    } else{
+        console.error("Image set not found or it is empty:", currentSet);
+    }
+    // Set the initial image source
+
+//     modal.style.display = "block";
+// }    
+
+//     //add the three images from the current index to the modal
+//     for (var i=0;i < imageSets[currentSet][currentIndex].length; i++){
+//         var img = document.createElement('img');
+//         img.className = 'modal-content';
+//         img.src = imageSets[currentSet][currentIndex][i];
+//         fullImageContainer.appendChild(img)
+//     }
+
+
+
+    
+}
+
+function closeModal() {
+    var modal = document.getElementById("fullImageModal");
+    modal.style.display = "none";
+    
+}
+
+function changeImage(direction) {
+    var images = imageSets[currentSet];
+    if (!images || images.length === 0) return;
+
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = images.length -1; // Move to the last image in the current set
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0; // Move to the first image in the current set
+    }
+    var fullImage = document.getElementById("fullImage");
+    fullImage.src = images[currentIndex];
+    // if (images[currentIndex]) {
+    //     var fullImage = document.getElementById("fullImage");
+    //     fullImage.src = images[currentIndex];
+    // } else{
+    //     console.error("image at index ", currentIndex, "is missing in the current set. ");
+    // }
+}
+
+
+document.getElementById('prev-arrow').addEventListener('click', function() {
+    changeImage(-1);
+});
+document.getElementById('next-arrow').addEventListener('click', function() {
+changeImage(1);
+});
+
+
+</script>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer alternate" style="background-image: url(static/images/background/5.jpg);">
+        <div class="auto-container">
+            <!--Widgets Section-->
+            <div class="widgets-section">
+                <div class="row">
+                    <!--Big Column-->
+                    <div class="big-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget about-widget">
+                                    <div class="footer-logo">
+                                        <figure>
+                                            <a href="{% url 'index' %}"><img src="{% static 'images/main-slider/logo-white.png' %}" alt=""></a>
+                                        </figure>
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="text">Zebra Sign world is a signage company that masters in ACP works, LED Sign Letters and many more. Please feel free to contact us in the given information.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Get In Touch With Us</h2>
+                                     <div class="widget-content">
+                                        <a href="">
+                                            <i class="fa fa-phone" aria-hidden=" true">&nbsp; <span>+91 98430 99624 &nbsp;|&nbsp; +91 88071 99880</span>
+                                            </i><br>
+                                            <i class="fa fa-envelope-o" aria-hidden=" true">&nbsp; <span>zebrasignworld@gmail.com</span></i>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                                <hr style="background-color: #fff;">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Our Social Media Links</h2>
+                                     <div class="widget-content">
+                                        
+                                        <ul class="social-icon-two">
+                                            <li><a href="https://www.youtube.com/@zebrasignworld"><i class="fa fa-youtube"></i></a></li>
+                                            <li><a href="88071 99880"><i class="fa fa-whatsapp"></i></a></li>
+                                            <li><a href="https://www.facebook.com/profile.php?id=61561308627148"><i class="fa fa-facebook"></i></a></li>
+                                        </ul>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>         
+                        </div>
+                    </div>
+                    
+                    <!--Big Column-->
+                    <div class="big-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+                            <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
+                                 <div class="footer-widget links-widget">
+                                    <h2 class="widget-title">Useful links</h2>
+                                    <div class="widget-content">
+                                        <ul class="list" style="margin-left: 0.5em;" >
+                                            <li><a href="{% url 'index' %}">About</a></li>
+                                            <li><a href="{% url 'service' %}">Services</a></li>
+                                            <li><a href="{% url 'projects' %}">Project</a></li>
+                                           
+                                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget gallery-widget">
+                                    <h2 class="widget-title">Address</h2>
+                                    <div class="widget-content">
+                                        <div class="outer clearfix">
+                                            <p style="color: #fff; margin-left: 1em;">
+                                                15A1, Subbiyan Layout <br>
+                                                Ramanathapuram <br>
+                                                Coimbatore - 641 - 045.
+                                            </p>
+                                            <hr style="background-color: #ffffff93;">
+                                            
+                                                <a target="_blank" href="https://www.google.com/maps/place/Zebra+Sign+World/@10.9941215,76.9987168,47m/data=!3m1!1e3!4m6!3m5!1s0x3ba8596365c05095:0x32f5b0fc7e365c9!8m2!3d10.9941751!4d76.9987868!16s%2Fg%2F11v5z9x909?authuser=0&entry=ttu">
+                                                    <i class="fa fa-map-marker"  style="margin-left: 0.8em; font-size: 20px; color: #fff; cursor: pointer;"></i>
+                                                </a>
+                                            <!-- <figure class="image">
+                                                <a href="images/gallery/1.jpg" class="lightbox-image" title="Image Title Here"><img src="images/resource/work-thumb-1.jpg" alt=""></a>
+                                            </figure>
+
+                                            <figure class="image">
+                                                <a href="images/gallery/2.jpg" class="lightbox-image" title="Image Title Here"><img src="images/resource/work-thumb-2.jpg" alt=""></a>
+                                            </figure>
+
+                                            <figure class="image">
+                                                <a href="images/gallery/3.jpg" class="lightbox-image" title="Image Title Here"><img src="images/resource/work-thumb-3.jpg" alt=""></a>
+                                            </figure>
+
+                                            <figure class="image">
+                                                <a href="images/gallery/4.jpg" class="lightbox-image" title="Image Title Here"><img src="images/resource/work-thumb-4.jpg" alt=""></a>
+                                            </figure>
+
+                                            <figure class="image">
+                                                <a href="images/gallery/5.jpg" class="lightbox-image" title="Image Title Here"><img src="images/resource/work-thumb-5.jpg" alt=""></a>
+                                            </figure>
+
+                                            <figure class="image">
+                                                <a href="images/gallery/1.jpg" class="lightbox-image" title="Image Title Here"><img src="images/resource/work-thumb-6.jpg" alt=""></a>
+                                            </figure> -->
+                                        </div>
+                                    </div>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    <!-- <div class="social-links">
+                        <ul class="social-icon-two">
+                            <li><a href="https://www.youtube.com/@zebrasignworld"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="88071 99880"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61561308627148"><i class="fa fa-facebook"></i></a></li>
+                        </ul>
+                    </div> -->
+                    
+                    <div class="copyright-text">
+                       <a href="" target="_blank">Zebra Sign World © 2024 - All Rights Reserved</a>
+                    </div>
+                    <div class="box"></div>
+                    <div class="box1"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Main Footer -->
+
+</div>
+
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html">
+    <a href="https://web.whatsapp.com/">
+        <span class="fa fa-whatsapp"></span>
+    </a>
+</div>
+<script>
+    function openLightbox(imagePath) {
+      document.getElementById('lightboxImage').src = imagePath;
+      document.getElementById('lightboxContainer').style.display = 'block';
+    }
+  
+    function closeLightbox() {
+      document.getElementById('lightboxContainer').style.display = 'none    ';
+    }
+</script>
+<!-- <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div> -->
+<script src="{% static 'js/jquery.js' %}"></script> 
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/mixitup.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<!-- Color Setting -->
+<script src="{% static 'js/color-settings.js' %}"></script>
+<script src="{% static 'js/project-side.js' %}"></script>
+</body>
+
+<!-- projects27:14-->
+</html>

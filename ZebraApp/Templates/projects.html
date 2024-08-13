@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- projects27:09-->
+<head>
+<meta charset="utf-8">
+<title>Zebra Sign World | Projects</title>
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">   
+<!--Color Switcher Mockup-->
+<link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+<!--Color Themes-->
+<link id="theme-color-file" href="{% static 'css/color-themes/default-theme.css' %}" rel="stylesheet">
+
+
+<link rel="icon" href="{% static 'images/LOGO.png' %}" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <!-- <div class="preloader"></div> -->
+    
+        <!-- Main Header-->
+    <header class="main-header header-style-four">
+        <div class="header-lower">
+            <div class="auto-container">
+                <div class="main-box clearfix">
+                    <div class="logo-box">
+                        <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/main-slider/logo-white.png' %}" alt="Image" title=""></a></div>
+                    </div>
+
+                    <div class="nav-outer">
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md ">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->      
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon flaticon-menu-button"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix" style="padding-top: 2em;">
+                                    <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li class="dropdown"><a href="{% url 'service' %}">Services</a>
+                                        <!-- <ul>
+                                            <li><a href="service-detail.html">Service Detail</a></li>
+                                        </ul> -->
+                                    </li>
+                                    <li ><a href="{% url 'projects' %}">Projects</a>
+                                    </li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    
+                                </ul> 
+                            </div>
+                        </nav><!-- Main Menu End-->                        
+
+                        <!-- Outer Box-->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Main Header -->
+    
+    <!--Page Title-->
+    <section class="page-title" id="page-project">
+        <video autoplay muted loop class="video-background">
+            <source src="{{ PH1.0.Project_Header.url }}" type="video/mp4">
+        </video>
+    
+        <div class="auto-container">
+            <div class="inner-container clearfix">
+                <div class="title-box">
+                    <h1>Projects</h1>
+                    <span class="title">The Exterior speak for themselves</span>
+                </div>
+                <!-- <ul class="bread-crumb clearfix">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Projects</li>
+                </ul> -->
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <section class="projects-section alternate">
+        <div class="auto-container">
+            <div class="mixitup-gallery">
+                <div class="filters text-center clearfix">
+
+                </div>
+    
+                
+
+                <div class="filter-list row">
+                    <style>
+              
+                
+                
+                /* .modal { display: none;  }
+                .modal-content { width: 100%; max-width: 600px; }
+                .prev, .next { cursor: pointer; } */
+                
+                
+                </style>
+                <div class="card-container">
+                    
+
+                    {% for item in PAC %}
+                    <div class="card" onclick="showFullImage('{{ item.id }}',0)">
+                        <img src="{{ item.image.url }}" alt="Image {{ forloop.index0 }} "></img>
+                    </div>
+                    {% endfor %} 
+                  
+                </div>
+                <div id="fullImageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+
+                    <img class="modal-content" id="fullImage" src="">
+
+                    <a id="prev-arrow" class="prev">&#10094;</a>
+                    <a id="next-arrow" class="next">&#10095;</a>            
+                </div>
+    
+            <script type="application/json" id="imageSetsData">
+            {
+                {% for item in PSP %}
+                "set{{ item.catagory.id }}" : [
+                    {% if item.project_image1.url %}"{{ item.project_image1.url|escapejs }}",{% endif %}
+                    {% if item.project_image2.url %}"{{ item.project_image2.url|escapejs }}",{% endif %}
+                    {% if item.project_image3.url %}"{{ item.project_image3.url|escapejs }}"{% endif %}
+                ]{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            }
+            </script>
+            
+            <script>
+                var imageSets = JSON.parse(document.getElementById('imageSetsData').textContent);
+                // console.log("Parsed image sets:", imageSets);
+                
+                var currentIndex = 0;
+                var currentSet = '';
+                // console.log(imageSets);
+                 
+                function showFullImage(set,clickedChildIndex) {
+                 
+                    
+                    currentSet = 'set' + set; 
+                    console.log("Current set Key: ", currentSet);
+                    
+                    if (imageSets[currentSet]) {
+                        var images = imageSets[currentSet];
+                        if (images && images.length > 0) {
+                            currentIndex = clickedChildIndex; 
+                            
+                            if (currentIndex < 0 || currentIndex >= images.length) {
+                                console.error("Clicked child index out of bounds:", currentIndex);
+                                return;
+                            }
+                       
+                            var fullImage = document.getElementById("fullImage");
+                            fullImage.src = images[currentIndex];
+                            console.log("Displaying image:", fullImage.src);
+   
+                            document.getElementById("fullImageModal").style.display = "block";
+                        } else{
+                            console.error("Image set not found or it is empty:", currentSet);
+                        }
+                    }else{
+                        console.error("Image set not found:", currentSet);
+                    }
+                }
+    
+                function closeModal() {
+                    var modal = document.getElementById("fullImageModal");
+                    modal.style.display = "none";
+                    
+                }
+                
+                function changeImage(direction) {
+                    var images = imageSets[currentSet];
+                    if (!images || images.length === 0) return;
+
+                    currentIndex += direction;
+                    if (currentIndex < 0) {
+                        currentIndex = images.length -1; // Move to the last image in the current set
+                    } else if (currentIndex >= images.length) {
+                        currentIndex = 0; // Move to the first image in the current set
+                    }
+                    var fullImage = document.getElementById("fullImage");
+                    fullImage.src = images[currentIndex];
+                    console.log("Changing image to:", fullImage.src);
+                }
+                   
+                
+                
+                document.getElementById('prev-arrow').addEventListener('click', function() {
+                    changeImage(-1);
+                });
+                document.getElementById('next-arrow').addEventListener('click', function() {
+                changeImage(1);
+                });
+
+                
+            </script>
+                    
+                </div>
+            </div>
+    
+            <div class="styled-pagination">
+                <ul class="clearfix">
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+    
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" z-index: 1; onclick="closeSidebar()">&times;</a>
+        <div id="sidebar-content">
+            <!-- Carousel -->
+            <div class="carousel">
+                <img class="carousel-image" src="{% static 'images/gallery/2-1.jpg' %}" alt="logo">
+                <img class="carousel-image" src="{% static 'images/gallery/2-2.jpg' %}" alt="logo">
+                <img class="carousel-image" src="{% static 'images/gallery/2-3.jpg' %}" alt="logo">
+            </div>
+            <h1 id="project-title" style="font-size: 22px;">Project Title</h1>
+            <p id="project-description">Project description goes here.</p>
+        </div>
+    </div>
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer alternate" style="background-image: url(static/images/background/5.jpg);">
+        <div class="auto-container">
+            <!--Widgets Section-->
+            <div class="widgets-section">
+                <div class="row">
+                    <!--Big Column-->
+                    <div class="big-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget about-widget">
+                                    <div class="footer-logo">
+                                        <figure>
+                                            <a href="{% url 'index' %}"><img src="{% static 'images/main-slider/logo-white.png' %}" alt=""></a>
+                                        </figure>
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="text">Zebra Sign world is a signage company that masters in ACP works, LED Sign Letters and many more. Please feel free to contact us in the given information.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Get In Touch With Us</h2>
+                                     <div class="widget-content">
+                                        <a href="">
+                                            <i class="fa fa-phone" aria-hidden=" true">&nbsp; <span>+91 98430 99624 &nbsp;|&nbsp; +91 88071 99880</span>
+                                            </i><br>
+                                            <i class="fa fa-envelope-o" aria-hidden=" true">&nbsp; <span>zebrasignworld@gmail.com</span></i>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                                <hr style="background-color: #fff;">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Our Social Media Links</h2>
+                                     <div class="widget-content">
+                                        
+                                        <ul class="social-icon-two">
+                                            <li><a href="https://www.youtube.com/@zebrasignworld"><i class="fa fa-youtube"></i></a></li>
+                                            <li><a href="88071 99880"><i class="fa fa-whatsapp"></i></a></li>
+                                            <li><a href="https://www.facebook.com/profile.php?id=61561308627148"><i class="fa fa-facebook"></i></a></li>
+                                        </ul>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>         
+                        </div>
+                    </div>
+                    
+                    <!--Big Column-->
+                    <div class="big-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+                            <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
+                                 <div class="footer-widget links-widget">
+                                    <h2 class="widget-title">Useful links</h2>
+                                    <div class="widget-content">
+                                        <ul class="list" style="margin-left: 0.5em;" >
+                                            <li><a href="{% url 'index' %}">About</a></li>
+                                            <li><a href="{% url 'service' %}">Services</a></li>
+                                            <li><a href="{% url 'projects' %}">Project</a></li>
+                                           
+                                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget gallery-widget">
+                                    <h2 class="widget-title">Address</h2>
+                                    <div class="widget-content">
+                                        <div class="outer clearfix">
+                                            <p style="color: #fff; margin-left: 1em;">
+                                                15A1, Subbiyan Layout <br>
+                                                Ramanathapuram <br>
+                                                Coimbatore - 641 - 045.
+                                            </p>
+                                            <hr style="background-color: #ffffff93;">
+                                            
+                                                <a target="_blank" href="https://www.google.com/maps/place/Zebra+Sign+World/@10.9941215,76.9987168,47m/data=!3m1!1e3!4m6!3m5!1s0x3ba8596365c05095:0x32f5b0fc7e365c9!8m2!3d10.9941751!4d76.9987868!16s%2Fg%2F11v5z9x909?authuser=0&entry=ttu">
+                                                    <i class="fa fa-map-marker"  style="margin-left: 0.8em; font-size: 20px; color: #fff; cursor: pointer;"></i>
+                                                </a>
+                                            
+                                        </div>
+                                    </div>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    <!-- <div class="social-links">
+                        <ul class="social-icon-two">
+                            <li><a href="https://www.youtube.com/@zebrasignworld"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="88071 99880"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61561308627148"><i class="fa fa-facebook"></i></a></li>
+                        </ul>
+                    </div> -->
+                    
+                    <div class="copyright-text">
+                       <a href="" target="_blank">Zebra Sign World © 2024 - All Rights Reserved</a>
+                    </div>
+                    <div class="box"></div>
+                    <div class="box1"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Main Footer -->
+
+</div>
+
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html">
+    <a href="https://web.whatsapp.com/">
+        <span class="fa fa-whatsapp"></span>
+    </a>
+</div>
+<!-- <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div> -->
+<script src="{% static 'js/jquery.js' %}"></script> 
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/mixitup.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<!-- Color Setting -->
+<script src="{% static 'js/color-settings.js' %}"></script>
+<script src="{% static 'js/project-side.js' %}"></script>
+</body>
+
+<!-- projects27:14-->
+</html>

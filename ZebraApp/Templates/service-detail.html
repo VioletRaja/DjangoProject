@@ -1,0 +1,309 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- service-detail27:08-->
+<head>
+<meta charset="utf-8">
+<title>Zebra Sign World | Service Detail</title>
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">   
+<!--Color Switcher Mockup-->
+<link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+<!--Color Themes-->
+<link id="theme-color-file" href="{% static 'css/color-themes/default-theme.css' %}" rel="stylesheet">
+
+<!-- <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
+<link rel="icon" href="{% static 'images/LOGO.png' %}" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader"></div>
+    
+        <!-- Main Header-->
+        <header class="main-header header-style-four">
+            <div class="header-top">
+                
+            </div>
+    
+            <div class="header-lower">
+                <div class="auto-container">
+                    <div class="main-box clearfix">
+                        <div class="logo-box">
+                            <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/main-slider/logo-white.png' %}" alt="Image" title=""></a></div>
+                        </div>
+    
+                        <div class="nav-outer">
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md ">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->      
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="icon flaticon-menu-button"></span>
+                                    </button>
+                                </div>
+                                
+                                <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix" style="padding-top: 2em;">
+                                        <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li class="dropdown"><a href="{% url 'service' %}">Services</a>
+                                            
+                                        </li>
+                                        <li ><a href="{% url 'projects' %}">Projects</a>
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                        
+                                    </ul> 
+                                </div>
+                            </nav><!-- Main Menu End-->                        
+    
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <!--End Main Header -->
+    
+    <!--Page Title-->
+    <section class="page-title" id="page-project">
+        {% for item in SP %}
+        <video autoplay muted loop class="video-background">
+            <source src="{{ item.Header.url }}" type="video/mp4">
+        </video>        
+        {% endfor %}
+        <div class="auto-container">
+            <div class="inner-container clearfix" id="">
+                <div class="title-box">
+                    
+                </div>
+                <ul class="bread-crumb clearfix">
+                    <h1 style="text-align: end;">Services</h1>
+                    <span class="title">The Exterior speak for themselves</span>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!--End Page Title-->
+
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                    <aside class="sidebar1 services-sidebar">
+                        
+                        <div class="sidebar-widget sidebar-blog-category">
+                            <ul class="blog-categories">
+                                <li class="active1" id="category-acp"><a href="#ACP" onclick="smoothScroll(event, 'ACP')">ACP Cladding</a></li>
+                                <li id="category-signages" class="category-open">
+                                    <a href="#Signages" id="active2" onclick="toggleNestedMenu(event, 'Signages')">Signages <span class="arrow">&#9658;</span></a>
+                                    <ul class="nested-menu">
+                                        <li data-service="service2" style="border: none;" id="active3"><a href="#ArchitecturalSignage" id="ArchitecturalSignage" onclick="smoothScroll(event, 'ArchitecturalSignage')">Architectural Signage</a></li>
+                                        <li data-service="service3" id="active4"><a href="#PylonSignage" onclick="smoothScroll(event, 'PylonSignage')">Pylon Signage</a></li>
+                                        <li data-service="service4" id="active4"><a href="#UnipoleSignage" onclick="smoothScroll(event, 'UnipoleSignage')">Unipole Signage</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                       
+                        <div class="help-box" style="background-image:url(static/images/background/6.jpg)">
+                            <div class="inner">
+                                <span style="color: #fff;">Quick Contact</span>
+                                <h2>Get Solution</h2>
+                                <div style="color: #fff; padding-bottom: 1em;">Contact us at the Exterior office nearest to you or submit a business inquiry online.</div>
+                                <a class="theme-btn btn-style-three" href="contact.html">Contact</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                
+                <!--Content Side-->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    <div class="service-detail">
+                        <div class="inner-box" class="background-color: #fff;">
+                            <div class="image-box">
+                                <div class="single-item-carousel owl-carousel owl-theme">
+                                    <figure class="image image-1"><img src="{% static 'images/resource/service-002.jpg' %}" alt="Site Image" /></figure>
+                                    <figure class="image image-2"><img src="{% static 'images/resource/service-001.jpg' %}" alt="Site Image" /></figure>
+                                    <figure class="image image-3"><img src="{% static 'images/resource/service-002.jpg' %}" alt="Site Image" /></figure>
+                                </div>
+                            </div>
+                            <h2 class="service-title">Commercial Design</h2>
+                            <div class="text">
+                                <strong>We Provide Complete Lighting Solution</strong>
+                                <p class="service-description">Elevate your building's exterior aesthetics and functionality with ACP (Aluminum Composite Panel) Cladding services from Zebra Sign World. ACP Cladding is a versatile solution known for its durability, aesthetic appeal, and practical benefits in modern architecture.</p>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <!-- Main Footer -->
+    <footer class="main-footer alternate" style="background-image: url(static/images/background/5.jpg);">
+        <div class="auto-container">
+            <!--Widgets Section-->
+            <div class="widgets-section">
+                <div class="row">
+                    <!--Big Column-->
+                    <div class="big-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget about-widget">
+                                    <div class="footer-logo">
+                                        <figure>
+                                            <a href="{% url 'index' %}"><img src="{% static 'images/main-slider/logo-white.png' %}" alt=""></a>
+                                        </figure>
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="text">Zebra Sign world is a signage company that masters in ACP works, LED Sign Letters and many more. Please feel free to contact us in the given information.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Get In Touch With Us</h2>
+                                     <div class="widget-content">
+                                        <a href="">
+                                            <i class="fa fa-phone" aria-hidden=" true">&nbsp; <span>+91 98430 99624 &nbsp;|&nbsp; +91 88071 99880</span>
+                                            </i><br>
+                                            <i class="fa fa-envelope-o" aria-hidden=" true">&nbsp; <span>zebrasignworld@gmail.com</span></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr style="background-color: #fff;">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Our Social Media Links</h2>
+                                     <div class="widget-content">
+                                        
+                                        <ul class="social-icon-two">
+                                            <li><a href="https://www.youtube.com/@zebrasignworld"><i class="fa fa-youtube"></i></a></li>
+                                            <li><a href="88071 99880"><i class="fa fa-whatsapp"></i></a></li>
+                                            <li><a href="https://www.facebook.com/profile.php?id=61561308627148"><i class="fa fa-facebook"></i></a></li>
+                                        </ul>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>         
+                        </div>
+                    </div>
+                    
+                    <!--Big Column-->
+                    <div class="big-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+                            <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
+                                 <div class="footer-widget links-widget">
+                                    <h2 class="widget-title">Useful links</h2>
+                                    <div class="widget-content">
+                                        <ul class="list" style="margin-left: 0.5em;" >
+                                            <li><a href="{% url 'index' %}">About</a></li>
+                                            <li><a href="{% url 'service' %}">Services</a></li>
+                                            <li><a href="{% url 'projects' %}">Project</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Footer Column-->
+                            <div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget gallery-widget">
+                                    <h2 class="widget-title">Address</h2>
+                                    <div class="widget-content">
+                                        <div class="outer clearfix">
+                                            <p style="color: #fff; margin-left: 1em;">
+                                                15A1, Subbiyan Layout <br>
+                                                Ramanathapuram <br>
+                                                Coimbatore - 641 - 045.
+                                            </p>
+                                            <hr style="background-color: #ffffff93;">
+                                            
+                                                <a target="_blank" href="https://www.google.com/maps/place/Zebra+Sign+World/@10.9941215,76.9987168,47m/data=!3m1!1e3!4m6!3m5!1s0x3ba8596365c05095:0x32f5b0fc7e365c9!8m2!3d10.9941751!4d76.9987868!16s%2Fg%2F11v5z9x909?authuser=0&entry=ttu">
+                                                    <i class="fa fa-map-marker"  style="margin-left: 0.8em; font-size: 20px; color: #fff; cursor: pointer;"></i>
+                                                </a>
+                                            
+                                        </div>
+                                    </div>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    
+                    
+                    <div class="copyright-text">
+                       <a href="" target="_blank">Zebra Sign World © 2024 - All Rights Reserved</a>
+                    </div>
+                    <div class="box"></div>
+                    <div class="box1"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Main Footer -->
+
+</div>
+
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html">
+    <a href="https://web.whatsapp.com/">
+        <span class="fa fa-whatsapp"></span>
+    </a>
+</div>
+<!-- <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div> -->
+<script src="{% static 'js/jquery.js' %}"></script> 
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/mixitup.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<!-- Color Setting -->
+<script src="{% static 'js/color-settings.js' %}"></script>
+<script src="{% static 'js/onclick-section.js' %}"></script>
+<script src="{% static 'js/service-details' %}"></script>
+<script src="{% static 'js/dropdown-scroll.js' %}"></script>
+<script src="{% static 'js/on-open.js' %}"></script>
+<script src="{% static  'js/2connect.js' %}"></script>
+</body>
+
+<!-- service-detail27:09-->
+</html>

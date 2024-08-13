@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive 4 Card Layout</title>
+<style>
+  /* Basic reset for margin and padding */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Container for the cards */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Individual card styles */
+  .card {
+    width: 300px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .card {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <h1>Card 1</h1>
+      <p>This is the content of Card 1.</p>
+    </div>
+    <div class="card">
+      <h1>Card 2</h1>
+      <p>This is the content of Card 2.</p>
+    </div>
+    <div class="card">
+      <h1>Card 3</h1>
+      <p>This is the content of Card 3.</p>
+    </div>
+    <div class="card">
+      <h1>Card 4</h1>
+      <p>This is the content of Card 4.</p>
+    </div>
+  </div>
+</body>
+</html>

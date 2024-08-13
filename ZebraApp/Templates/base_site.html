@@ -1,0 +1,14 @@
+
+{% extends 'admin/base_site.html' %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        #header h1 a {
+            background: url("{% static 'Admin/Zebra_logo.svg' %}") no-repeat center left;
+            height: 48px; /* Adjust the height to fit your logo */
+            width: 100%; /* Adjust the width to fit your logo */
+            text-indent: -9999px; /* Hides the text "Django administration" */
+        }
+    </style>
+{% endblock %}

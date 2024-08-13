@@ -1,0 +1,28 @@
+{% load static %}
+<style>
+  
+</style>
+{% for msg in messages %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<div id="centeredDiv" class="alert alert-info alert-dismissible fade show" role="alert">
+    {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+
+<script>
+    // JavaScript to show the div for a few seconds and then hide it
+    document.addEventListener('DOMContentLoaded', function() {
+      var centeredDiv = document.getElementById('centeredDiv');
+      centeredDiv.style.display = 'block'; // Show the div
+  
+      // Automatically close the div after 3 seconds
+      setTimeout(function() {
+        centeredDiv.style.display = 'none'; // Hide the div
+      }, 4000); // 3000 milliseconds = 3 seconds
+    });
+  </script>
+
+

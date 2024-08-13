@@ -1,0 +1,6 @@
+<!-- feedback/form.html -->
+<form method="post" action="{% url 'feedback' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit Feedback</button>
+</form>
